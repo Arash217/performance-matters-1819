@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{title}}</title>
+    <title>Countries</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-<div id="countries">
-    {{#each countries}}
-        <a href="countries/{{alpha2Code}}">
-            <div class="country">
-                <img src="{{flag}}">
-                <p>{{name}}</p>
-            </div>
-        </a>
-    {{/each}}
-</div>
+{{> search-form }}
+{{> sort-form }}
+{{> countries-list }}
 </body>
 </html>

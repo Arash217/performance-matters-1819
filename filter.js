@@ -4,7 +4,7 @@ const search = (countries, keyword) => {
 
 const sort = (countries, order) => {
     return countries.sort((countryA, countryB) => {
-        if (order === 'ascending') [countryA, countryB] = [countryB, countryA];
+        if (order === 'asc') [countryA, countryB] = [countryB, countryA];
         return countryB.name.localeCompare(countryA.name);
     })
 };

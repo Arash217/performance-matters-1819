@@ -15,7 +15,12 @@ const cert = {
 const app = new Koa();
 
 app.use(serve(path.join(__dirname, '/public')));
-app.use(hbs.middleware({viewPath: path.join(__dirname, '/views')}));
+
+app.use(hbs.middleware({
+    viewPath: path.join(__dirname, '/views'),
+    partialsPath: path.join(__dirname, 'views/partials')
+}));
+
 app.use(compress({
     filter(content_type) {
         return /text/i.test(content_type)

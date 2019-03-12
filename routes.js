@@ -5,22 +5,26 @@ const filter = require('./filter');
 const router = new Router();
 
 router.get('/', async ctx => {
-    const countries = await apiProxy.getAll();
-
-    await ctx.render('countries', {
-        countries
-    });
+    await ctx.redirect('/countries');
 });
 
-router.get('/sort/:order/search/:keyword?', async ctx => {
-    const {keyword = '', order} = ctx.params;
+router.get('/countries', async ctx => {
+    const {order = 'asc', search = ''} = ctx.query;
+    let countries = await apiProxy.getAll();
 
-    const countries = await apiProxy.getAll();
-    const foundCountries = filter.search(countries, keyword);
-    const sortedCountries = filter.sort(foundCountries, order);
+    if (order){
+        countries = filter.sort(countries, order);
+    }
+
+    if (search){
+        countries = filter.search(countries, search);
+    }
 
     await ctx.render('countries', {
-        countries: sortedCountries
+        countries,
+        search,
+        order,
+        ascending: order === 'asc'
     });
 });
 
