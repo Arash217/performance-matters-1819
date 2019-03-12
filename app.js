@@ -29,4 +29,7 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 const server = http2.createSecureServer(cert, app.callback());
-server.listen(3000);
+
+const port = process.env.PORT || 3000;
+
+server.listen(port);
