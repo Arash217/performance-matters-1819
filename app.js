@@ -24,6 +24,18 @@ app.use(compress({
     flush: require('zlib').Z_SYNC_FLUSH
 }));
 
+app.use(async (ctx, next) => {
+    try {
+        await next();
+        if (ctx.status === 404) {
+            await ctx.render('error', {
+                errorMessage: 'Page not found'
+            });
+        }
+    } catch (err) {
+        console.log(err);
+    }
+});
 
 app.use(router.routes());
 app.use(router.allowedMethods());
@@ -32,4 +44,6 @@ const server = http2.createSecureServer(cert, app.callback());
 
 const port = process.env.PORT || 3000;
 
-server.listen(port);
+server.listen(port, () => {
+    console.log(`App started on port ${port}`)
+});
