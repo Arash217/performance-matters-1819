@@ -26,7 +26,7 @@ app.use(compress({
         return /text/i.test(content_type)
     },
     threshold: 1024,
-    flush: require('zlib').Z_SYNC_FLUSH
+    flush: require('zlib').constants.Z_SYNC_FLUSH
 }));
 
 app.use(async (ctx, next) => {

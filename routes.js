@@ -12,11 +12,11 @@ router.get('/countries', async ctx => {
     const {order = 'asc', search = ''} = ctx.query;
     let countries = await apiProxy.getAll();
 
-    if (order){
+    if (order) {
         countries = filter.sort(countries, order);
     }
 
-    if (search){
+    if (search) {
         countries = filter.search(countries, search);
     }
 
@@ -29,12 +29,20 @@ router.get('/countries', async ctx => {
 });
 
 router.get('/countries/:code', async ctx => {
-    const {code} = ctx.params;
-    const country = await apiProxy.get(code);
+    try {
+        const {code} = ctx.params;
+        const country = await apiProxy.get(code);
 
-    await ctx.render('country', {
-        country
-    });
+        await ctx.render('country', {
+            country
+        });
+    } catch (e) {
+        if (e.status === 404) {
+            await ctx.render('error', {
+                errorMessage: 'Country not found'
+            });
+        }
+    }
 });
 
 module.exports = router;
