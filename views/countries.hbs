@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="countries">
+    {{#each this.countries}}
+
+        <a href="#countries/{{alpha2Code}}">
+            <div class="country">
+                <img src="{{flag}}">
+                <p>{{name}}</p>
+            </div>
+        </a>
+
+    {{/each}}
+</div>
+</body>
+</html>
