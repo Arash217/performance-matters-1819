@@ -4,16 +4,6 @@ const URLParameterBuilder = params => {
     return params.join(';');
 };
 
-const debounce = (fn, wait) => {
-    let timeout;
-    return (...args) => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            fn.apply(this, args);
-        }, wait);
-    };
-};
-
 const setExpirationDate = obj => {
     const now = new Date();
     now.setHours(now.getHours() + 24);

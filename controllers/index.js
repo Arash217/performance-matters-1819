@@ -1,14 +1,7 @@
-const apiProxy = require('./api-proxy');
-const Router = require('koa-router');
-const filter = require('./filter');
+const apiProxy = require('../services/api-proxy');
+const filter = require('../services/filter');
 
-const router = new Router();
-
-router.get('/', async ctx => {
-    await ctx.redirect('/countries');
-});
-
-router.get('/countries', async ctx => {
+const countries = async ctx => {
     const {order = 'asc', search = ''} = ctx.query;
     let countries = await apiProxy.getAll();
 
@@ -26,9 +19,9 @@ router.get('/countries', async ctx => {
         order,
         ascending: order === 'asc'
     });
-});
+};
 
-router.get('/countries/:code', async ctx => {
+const country = async ctx => {
     try {
         const {code} = ctx.params;
         const country = await apiProxy.get(code);
@@ -43,6 +36,9 @@ router.get('/countries/:code', async ctx => {
             });
         }
     }
-});
+};
 
-module.exports = router;
+module.exports = {
+    countries,
+    country
+};

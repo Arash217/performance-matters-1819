@@ -1,54 +1,38 @@
-const fs = require('fs');
 const path = require('path');
 const http2 = require('http2');
 const hbs = require('koa-hbs');
 const serve = require('koa-static');
-const compress = require('koa-compress');
 const Koa = require('koa');
-const router = require('./routes');
+const middlewares = require('./middlewares');
+const router = require('./routes/routes');
+const certificate = require('./config/certificate');
 
-const cert = {
-    key: fs.readFileSync(path.join(__dirname, './certificate/privateKey.key')),
-    cert: fs.readFileSync(path.join(__dirname, './certificate/certificate.crt'))
-};
-
+/* Init Koa instance */
 const app = new Koa();
 
+/* Serve assets from folder */
 app.use(serve(path.join(__dirname, '/public')));
 
+/* Templating engine configuration */
 app.use(hbs.middleware({
     viewPath: path.join(__dirname, '/views'),
     partialsPath: path.join(__dirname, 'views/partials')
 }));
 
-app.use(compress({
-    filter(content_type) {
-        return /text/i.test(content_type)
-    },
-    threshold: 1024,
-    flush: require('zlib').constants.Z_SYNC_FLUSH
-}));
+/* Register all middleware */
+app.use(middlewares);
 
-app.use(async (ctx, next) => {
-    try {
-        await next();
-        if (ctx.status === 404) {
-            await ctx.render('error', {
-                errorMessage: 'Page not found'
-            });
-        }
-    } catch (err) {
-        console.log(err);
-    }
-});
-
+/* Register all routes */
 app.use(router.routes());
+
+/* Allow all types of HTTP methods */
 app.use(router.allowedMethods());
 
-const server = http2.createSecureServer(cert, app.callback());
+/* Start a http2 server with given certificate */
+const server = http2.createSecureServer(certificate, app.callback());
 
+/* Use port given from environment variable or the default */
 const port = process.env.PORT || 3000;
 
-server.listen(port, () => {
-    console.log(`App started on port ${port}`)
-});
+/* Start server with given port */
+server.listen(port,() => console.log(`App started on port ${port}`));

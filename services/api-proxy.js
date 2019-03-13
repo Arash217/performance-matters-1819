@@ -1,6 +1,6 @@
 const api = require('./api');
 const cache = require('./cache');
-const {errorMiddleware, setExpirationDate, isExpired} = require('./utils');
+const {errorMiddleware, setExpirationDate, isExpired} = require('../utils');
 
 let countriesCached = false;
 
