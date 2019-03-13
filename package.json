@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +16,6 @@
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "node-fetch": "^2.3.0"
-  }
+  },
+  "devDependencies": {}
 }

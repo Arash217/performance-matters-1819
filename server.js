@@ -3,8 +3,9 @@ const http2 = require('http2');
 const hbs = require('koa-hbs');
 const serve = require('koa-static');
 const Koa = require('koa');
+
 const middlewares = require('./middlewares');
-const router = require('./routes/routes');
+const router = require('./routes');
 const certificate = require('./config/certificate');
 
 /* Init Koa instance */
