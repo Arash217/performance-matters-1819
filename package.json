@@ -7,7 +7,8 @@
     "start": "node server.js",
     "dev": "nodemon server.js -e hbs",
     "minify:css": "cleancss -O2 -o public/css/main.min.css resources/css/main.css",
-    "compress": "bread-compressor --brotli-quality=11 public"
+    "compress": "bread-compressor --brotli-quality=11 public",
+    "all": ""
   },
   "author": "",
   "license": "ISC",
