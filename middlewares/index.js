@@ -19,8 +19,19 @@ const errorHandling = async (ctx, next) => {
                 errorMessage: 'Page not found'
             });
         }
-    } catch (err) {
-        console.log(err);
+    } catch (e) {
+        let errorMessage = '';
+
+        switch (e.status) {
+            case 400:
+            case 404:
+                errorMessage = 'Country not found';
+                break;
+            default:
+                errorMessage = 'Something went wrong';
+        }
+
+        await ctx.render('error', {errorMessage});
     }
 };
 

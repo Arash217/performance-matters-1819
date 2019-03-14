@@ -22,20 +22,12 @@ const countries = async ctx => {
 };
 
 const country = async ctx => {
-    try {
-        const {code} = ctx.params;
-        const country = await apiProxy.get(code);
+    const {code} = ctx.params;
+    const country = await apiProxy.get(code);
 
-        await ctx.render('country', {
-            country
-        });
-    } catch (e) {
-        if (e.status === 404) {
-            await ctx.render('error', {
-                errorMessage: 'Country not found'
-            });
-        }
-    }
+    await ctx.render('country', {
+        country
+    });
 };
 
 module.exports = {
