@@ -24,17 +24,17 @@ npm start
 
 ## 2. NPM scripts
 
-The dev command will use nodemon to restart the server automatically when a change is made in the code.
+The dev command will use nodemon to restart the server automatically when a change is made in the code
 ```bash
 npm run dev
 ```
 
-The prebuild command will remove the public folder and then recreate it to ensure that no files are cached.
+The prebuild command will remove the public folder and then recreate it to ensure that no files are cached
 ```bash
 npm run prebuild
 ```
 
-The prebuild command will remove the public folder and then recreate it to ensure that no files are cached.
+The minify:css command will make a minified version of the CSS that is located in the resources folder and place it in the public folder
 ```bash
-npm run prebuild
+npm run minify:css
 ```
