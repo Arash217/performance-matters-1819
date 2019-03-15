@@ -22,19 +22,19 @@ Run the server (will use port 3000)
 npm start
 ```
 
-## 2. Scripts
+## 2. NPM scripts
 
-Fork and/or clone it
+The dev command will use nodemon to restart the server automatically when a change is made in the code.
 ```bash
-git clone https://github.com/Arash217/performance-matters-1819
+npm run dev
 ```
 
-Install dependencies
+The prebuild command will remove the public folder and then recreate it to ensure that no files are cached.
 ```bash
-npm install
+npm run prebuild
 ```
 
-Run the server (will use port 3000)
+The prebuild command will remove the public folder and then recreate it to ensure that no files are cached.
 ```bash
-npm start
+npm run prebuild
 ```
