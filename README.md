@@ -16,6 +16,7 @@ Install dependencies
 ```bash
 npm install
 ```
+
 Run the server (will use port 3000)
 ```bash
 npm start
