@@ -21,3 +21,20 @@ Run the server (will use port 3000)
 ```bash
 npm start
 ```
+
+## 2. Scripts
+
+Fork and/or clone it
+```bash
+git clone https://github.com/Arash217/performance-matters-1819
+```
+
+Install dependencies
+```bash
+npm install
+```
+
+Run the server (will use port 3000)
+```bash
+npm start
+```
