@@ -38,3 +38,18 @@ The minify:css command will make a minified version of the CSS that is located i
 ```bash
 npm run minify:css
 ```
+
+The compress command will make a Gzip and Brotli version of all files that are located in the public folder
+```bash
+npm run compress
+```
+
+The build command will run the prebuild, minify and compress commands sequentially
+```bash
+npm run build
+```
+
+The start command will run the build command first and then start the server (on port 3000)
+```bash
+npm start
+```
