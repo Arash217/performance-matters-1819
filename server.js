@@ -13,9 +13,8 @@ const app = new Koa();
 
 /* Serve assets from folder */
 app.use(serve(path.join(__dirname, '/public'), {
-    maxage: 1000 * 60 * 60 * 24 * 365,
     setHeaders(res) {
-        res.setHeader('cache-control', `public, max-age=${60 * 60 * 24 * 365}`)
+        res.setHeader('cache-control', 'public, max-age=31536000');
     }
 }));
 
