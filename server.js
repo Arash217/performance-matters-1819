@@ -12,7 +12,12 @@ const certificate = require('./config/certificate');
 const app = new Koa();
 
 /* Serve assets from folder */
-app.use(serve(path.join(__dirname, '/public')));
+app.use(serve(path.join(__dirname, '/public'), {
+    maxage: 1000 * 60 * 60 * 24 * 365,
+    setHeaders(res) {
+        res.setHeader('cache-control', `public, max-age=${60 * 60 * 24 * 365}`)
+    }
+}));
 
 /* Templating engine configuration */
 app.use(hbs.middleware({
