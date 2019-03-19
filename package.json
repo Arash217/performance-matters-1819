@@ -7,8 +7,8 @@
     "dev": "nodemon server.js -e hbs",
     "prebuild": "rimraf public && make-dir public/css",
     "minify:css": "cleancss -O2 -o public/css/main.min.css resources/css/main.css",
+    "minify:svg": "svgo -f public/images/flags",
     "compress": "bread-compressor --brotli-quality=11 public",
-    "optimize:svg": "svgo -f public/images/flags",
     "build": "run-s prebuild minify:* compress",
     "start": "npm run build && node server.js"
   },
