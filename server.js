@@ -1,5 +1,6 @@
 const path = require('path');
 const http2 = require('http2');
+const http = require('http');
 const hbs = require('koa-hbs');
 const serve = require('koa-static');
 const Koa = require('koa');
@@ -34,10 +35,13 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 
 /* Start a http2 server with given certificate */
-const server = http2.createSecureServer(certificate, app.callback());
+const httpServer = http.createServer(app.callback());
+const http2Server = http2.createSecureServer(certificate, app.callback());
 
 /* Use port given from environment variable or the default */
-const port = process.env.PORT || 3000;
+const httpPort = process.env.HTTP_PORT || 3000;
+const http2Port = process.env.HTTP2_PORT || 3001;
 
 /* Start server with given port */
-server.listen(port,() => console.log(`App started on port ${port}`));
+httpServer.listen(httpPort, () => console.log(`HTTP started on port ${httpPort}`));
+http2Server.listen(http2Port,() => console.log(`HTTP2 started on port ${http2Port}`));
