@@ -113,7 +113,7 @@ nav {
     width: 25%;
 }
 
-.country-details tr:nth-child(even){
+.country-details tr:nth-child(even) {
     background-color: var(--color2);
 }
 
@@ -122,7 +122,7 @@ nav {
 }
 
 .invisible {
-    display: none!important;
+    display: none !important;
 }
 
 /* Error */
@@ -175,13 +175,13 @@ nav {
     animation: loading-animation 1500ms infinite linear;
     border-radius: 0.5em;
     box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0,
-                rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0,
-                rgba(255, 255, 255, 0.75) 0 1.5em 0 0,
-                rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0,
-                rgba(255, 255, 255, 0.75) -1.5em 0 0 0,
-                rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0,
-                rgba(255, 255, 255, 0.75) 0 -1.5em 0 0,
-                rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+    rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0,
+    rgba(255, 255, 255, 0.75) 0 1.5em 0 0,
+    rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0,
+    rgba(255, 255, 255, 0.75) -1.5em 0 0 0,
+    rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0,
+    rgba(255, 255, 255, 0.75) 0 -1.5em 0 0,
+    rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
 }
 
 /* Animation for spinner */
@@ -192,4 +192,8 @@ nav {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.label {
+    margin-right: 10px;
 }
