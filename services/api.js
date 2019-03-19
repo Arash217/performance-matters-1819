@@ -1,6 +1,6 @@
 const {URLParameterBuilder, request} = require('../utils');
 
-const getAllFields = ['name', 'alpha2Code', 'flag'];
+const getAllFields = ['name', 'alpha2Code', 'alpha3Code', 'flag'];
 const getFields = [...getAllFields, 'capital', 'region', 'subregion', 'latlng', 'timezones', 'currencies', 'languages'];
 const getAllURLParameters = URLParameterBuilder(getAllFields);
 const getURLParameters = URLParameterBuilder(getFields);
