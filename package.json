@@ -5,16 +5,24 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js -e hbs,css",
-    "prebuild": "rimraf public/css && make-dir public/css",
+    "prebuild": "rimraf public/css public/js && make-dir public/css public/js",
     "minify:css": "cleancss -O2 -o public/css/main.min.css resources/css/main.css",
     "minify:svg": "svgo -f public/images/flags",
+    "minify:js": "uglifyjs resources/js/jquery-3.3.1.js -c -m -o public/js/jquery-3.3.1.min.js",
     "compress:css": "bread-compressor --brotli-quality=11 public/css/main.min.css",
     "compress:images": "bread-compressor --brotli-quality=11 public/images",
-    "revision:minified-css": "node-file-rev public/css/main.min.css -m=public/rev-manifest.json -r=public/css/",
-    "revision:gzipped-css": "node-file-rev public/css/main.min.css.gz -m=public/rev-manifest.json -r=public/css/",
-    "revision:brotlied-css": "node-file-rev public/css/main.min.css.br -m=public/rev-manifest.json -r=public/css/",
-    "revision": "run-s revision:* minify:css compress:css",
-    "build": "run-s prebuild minify:css compress:css revision",
+    "compress:js": "bread-compressor --brotli-quality=11 public/js/jquery-3.3.1.min.js",
+    "revision:css:minified": "node-file-rev public/css/main.min.css -m=public/rev-manifest.json -r=public/css/",
+    "revision:css:gzipped": "node-file-rev public/css/main.min.css.gz -m=public/rev-manifest.json -r=public/css/",
+    "revision:css:brotlied": "node-file-rev public/css/main.min.css.br -m=public/rev-manifest.json -r=public/css/",
+    "revision:js:minified": "node-file-rev public/js/jquery-3.3.1.min.js -m=public/rev-manifest.json -r=public/js/",
+    "revision:js:gzipped": "node-file-rev public/js/jquery-3.3.1.min.js.gz -m=public/rev-manifest.json -r=public/js/",
+    "revision:js:brotlied": "node-file-rev public/js/jquery-3.3.1.min.js.br -m=public/rev-manifest.json -r=public/js/",
+    "revision:css": "run-s revision:css:* minify:css compress:css",
+    "revision:js": "run-s revision:js:* minify:js compress:js",
+    "build:css": "run-s minify:css compress:css revision:css",
+    "build:js": "run-s minify:js compress:js revision:js",
+    "build": "run-s prebuild build:*",
     "start": "npm run build && node server.js"
   },
   "author": "",
@@ -36,6 +44,7 @@
     "node-file-rev": "^1.1.2",
     "npm-run-all": "^4.1.5",
     "rimraf": "^2.6.3",
-    "svgo": "^1.2.0"
+    "svgo": "^1.2.0",
+    "uglifyjs": "^2.4.11"
   }
 }
