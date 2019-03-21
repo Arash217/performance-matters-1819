@@ -53,3 +53,13 @@ The start command will run the build command first and then start the server (on
 ```bash
 npm start
 ```
+
+## 3. Optimizations
+
+### 3.1 First view
+
+#### 3.1.1 No optimizations
+
+
+
+
