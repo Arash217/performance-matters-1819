@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js -e hbs",
-    "prebuild": "rimraf public && make-dir public/css",
+    "dev": "nodemon server.js -e hbs,css",
+    "prebuild": "rimraf public/css && make-dir public/css",
     "minify:css": "cleancss -O2 -o public/css/main.min.css resources/css/main.css",
     "minify:svg": "svgo -f public/images/flags",
-    "compress:css": "bread-compressor --brotli-quality=11 public/css",
+    "compress:css": "bread-compressor --brotli-quality=11 public/css/main.min.css",
     "compress:images": "bread-compressor --brotli-quality=11 public/images",
-    "build": "run-s prebuild minify:* compress",
+    "revision:minified-css": "node-file-rev public/css/main.min.css -m=public/rev-manifest.json -r=public/css/",
+    "revision:gzipped-css": "node-file-rev public/css/main.min.css.gz -m=public/rev-manifest.json -r=public/css/",
+    "revision:brotlied-css": "node-file-rev public/css/main.min.css.br -m=public/rev-manifest.json -r=public/css/",
+    "revision": "run-s build revision:* minify:css compress:css",
+    "build": "run-s prebuild minify:css compress:css",
     "start": "npm run build && node server.js"
   },
   "author": "",
@@ -27,7 +31,9 @@
   "devDependencies": {
     "bread-compressor-cli": "^1.0.5",
     "clean-css-cli": "^4.2.1",
+    "koa-manifest-rev": "^0.3.0",
     "make-dir-cli": "^2.0.0",
+    "node-file-rev": "^1.1.2",
     "npm-run-all": "^4.1.5",
     "rimraf": "^2.6.3",
     "svgo": "^1.2.0"

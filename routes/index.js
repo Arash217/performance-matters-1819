@@ -3,6 +3,8 @@ const controllers = require('../controllers');
 
 const router = new Router();
 
+
+
 /* First route is for redirection */
 router.get('/', async ctx => await ctx.redirect('/countries'));
 router.get('/countries', controllers.countries);

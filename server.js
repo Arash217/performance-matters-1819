@@ -3,6 +3,7 @@ const http2 = require('http2');
 const http = require('http');
 const hbs = require('koa-hbs');
 const serve = require('koa-static');
+const koaManifestRev = require('koa-manifest-rev');
 const Koa = require('koa');
 
 const middlewares = require('./middlewares');
@@ -12,11 +13,21 @@ const certificate = require('./config/certificate');
 /* Init Koa instance */
 const app = new Koa();
 
+app.use(async (ctx, next) => {
+    ctx.url = ctx.url.replace( /-[0-9a-fA-F]{32}/, '');
+    await next();
+});
+
 /* Serve assets from folder */
 app.use(serve(path.join(__dirname, '/public'), {
     setHeaders(res) {
         res.setHeader('cache-control', 'public, max-age=31536000');
     }
+}));
+
+app.use(koaManifestRev({
+    manifest: path.join(__dirname, 'public', 'rev-manifest.json'),
+    prepend: '/css/'
 }));
 
 /* Templating engine configuration */
