@@ -13,8 +13,8 @@
     "revision:minified-css": "node-file-rev public/css/main.min.css -m=public/rev-manifest.json -r=public/css/",
     "revision:gzipped-css": "node-file-rev public/css/main.min.css.gz -m=public/rev-manifest.json -r=public/css/",
     "revision:brotlied-css": "node-file-rev public/css/main.min.css.br -m=public/rev-manifest.json -r=public/css/",
-    "revision": "run-s build revision:* minify:css compress:css",
-    "build": "run-s prebuild minify:css compress:css",
+    "revision": "run-s revision:* minify:css compress:css",
+    "build": "run-s prebuild minify:css compress:css revision",
     "start": "npm run build && node server.js"
   },
   "author": "",

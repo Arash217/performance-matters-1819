@@ -13,6 +13,7 @@ const certificate = require('./config/certificate');
 /* Init Koa instance */
 const app = new Koa();
 
+/* Strip hash (if) in url so that brotli and gzip files can be served */
 app.use(async (ctx, next) => {
     ctx.url = ctx.url.replace( /-[0-9a-fA-F]{32}/, '');
     await next();
