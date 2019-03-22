@@ -77,6 +77,7 @@ SVG's total time: 1.9 min
 
 256 requests | 4.9 MB transferred | Finish 2.3 min | DOMContentLoaded: 14.81 s | Load 2.3 min
 ```
+</details>
 
 #### 3.1.2 Minifying
 ```diff
@@ -97,4 +98,4 @@ SVG's total time: 1.5 min
 
 256 requests | 2.9 MB transferred | Finish 1.9 min | DOMContentLoaded: 10.13 s | Load 1.9 min
 ```
-
+</details>
