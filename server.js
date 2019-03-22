@@ -13,17 +13,11 @@ const certificate = require('./config/certificate');
 /* Init Koa instance */
 const app = new Koa();
 
-/* Strip hash (if) in url so that brotli and gzip files can be served */
-app.use(async (ctx, next) => {
-    ctx.url = ctx.url.replace( /-[0-9a-fA-F]{32}/, '');
-    await next();
-});
-
 /* Serve assets from folder */
 app.use(serve(path.join(__dirname, '/public'), {
-    // setHeaders(res) {
-    //     res.setHeader('cache-control', 'public, max-age=31536000');
-    // }
+    setHeaders(res) {
+        res.setHeader('cache-control', 'public, max-age=31536000');
+    }
 }));
 
 /* Inject files with hashes into views */
