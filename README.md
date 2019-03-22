@@ -59,7 +59,12 @@ npm start
 ### 3.1 First view
 
 #### 3.1.1 No optimizations
-
+```diff
++ HTML size 64.1kb
++ CSS size 3.7kb
++ JQUERY size 276kb
++ SVG's total size 4.6mb
+```
 
 
 
