@@ -69,7 +69,6 @@ SVG's total size: 4.6 mb
   <summary>Network results based on a slow 3G network</summary>
 <br>
 
-**Without compression**
 ```
 HTML time: 3.29 s
 CSS time: 2.27 s
