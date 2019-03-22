@@ -28,7 +28,7 @@ app.use(serve(path.join(__dirname, '/public'), {
 
 app.use(koaManifestRev({
     manifest: path.join(__dirname, 'public', 'rev-manifest.json'),
-    prepend: '/css/'
+    prepend: '/'
 }));
 
 /* Templating engine configuration */
