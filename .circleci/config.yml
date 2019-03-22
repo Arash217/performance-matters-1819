@@ -4,5 +4,6 @@ jobs:
     branches:
       only:
         - master
-    steps:
-      - run: ssh -o "StrictHostKeyChecking no" root@134.209.92.164 "cd ~/performance-matters-1819; git pull; npm install; forever start app.js"
+    deploy:
+      steps:
+        - run: ssh -o "StrictHostKeyChecking no" root@134.209.92.164 "cd ~/performance-matters-1819; git pull; npm install; forever start app.js"
