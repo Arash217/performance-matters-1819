@@ -21,9 +21,9 @@ app.use(async (ctx, next) => {
 
 /* Serve assets from folder */
 app.use(serve(path.join(__dirname, '/public'), {
-    setHeaders(res) {
-        res.setHeader('cache-control', 'public, max-age=31536000');
-    }
+    // setHeaders(res) {
+    //     res.setHeader('cache-control', 'public, max-age=31536000');
+    // }
 }));
 
 /* Inject files with hashes into views */

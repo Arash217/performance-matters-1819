@@ -36,6 +36,6 @@ const errorHandling = async (ctx, next) => {
 };
 
 module.exports = compose([
-    compression,
+    // compression,
     errorHandling
 ]);
