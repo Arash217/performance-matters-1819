@@ -26,6 +26,7 @@ app.use(serve(path.join(__dirname, '/public'), {
     }
 }));
 
+/* Inject files names with hashes into views by using rev-manifest.json */
 app.use(koaManifestRev({
     manifest: path.join(__dirname, 'public', 'rev-manifest.json'),
     prepend: '/'
