@@ -7,4 +7,4 @@ jobs:
       only:
         - master
     steps:
-      - run: ssh -o "StrictHostKeyChecking no" root@134.209.92.164 "cd ~/performance-matters-1819; git pull; npm install; forever start server.js"
+      - run: ssh -o "StrictHostKeyChecking no" root@134.209.92.164 "cd ~/performance-matters-1819; git pull; npm install;"
