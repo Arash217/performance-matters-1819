@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const http2 = require('http2');
 const http = require('http');
