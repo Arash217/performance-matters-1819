@@ -11,7 +11,7 @@
     "minify:js": "uglifyjs resources/js/jquery-3.3.1.js -c -m -o public/js/jquery-3.3.1.min.js",
     "minify": "run-p minify:css minify:js",
     "compress:css": "bread-compressor --brotli-quality=11 public/css",
-    "compress:svg": "bread-compressor --brotli-quality=11 public/images",
+    "compress:svg": "bread-compressor --brotli-quality=11 public/images/flags",
     "compress:js": "bread-compressor --brotli-quality=11 public/js",
     "compress": "run-p compress:css compress:js",
     "revision:css": "node-file-rev public/css/main.min.css -m=public/rev-manifest.json -r=public/",
