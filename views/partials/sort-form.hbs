@@ -1,6 +1,6 @@
 <form id="sort-container" action="/countries" method="get">
     <label for="sort-select">Sort by name:</label>
-    <select id="sort-select" name="order" >
+    <select id="sort-select" name="order" onchange="this.form.submit()">
         <option value="asc" {{#if ascending}} selected{{/if}}>
             A-Z
         </option>
