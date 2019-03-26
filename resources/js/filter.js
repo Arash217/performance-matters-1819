@@ -21,7 +21,7 @@ function removeChildren(node) {
     }
 }
 
-const getHtml = async data => {
+const getHtml = async () => {
     const res = await fetch('/filter', {
         method: 'POST',
         body: JSON.stringify({
@@ -33,18 +33,19 @@ const getHtml = async data => {
     return await res.text();
 };
 
-const inputEventHandler = async e => {
+const inputEventHandler = e => {
     search = e.target.value;
-    const html = await getHtml();
-    console.log(html);
-    removeChildren(countriesContainer);
-    countriesContainer.insertAdjacentHTML('afterbegin', html)
+    renderHtml();
 };
 
 searchInput.addEventListener("input", debounce(inputEventHandler, 300));
 
-const selectEventHandler = async e => {
+const selectEventHandler = e => {
     order = e.target.value;
+    renderHtml();
+};
+
+const renderHtml = async () => {
     const html = await getHtml();
     removeChildren(countriesContainer);
     countriesContainer.insertAdjacentHTML('afterbegin', html)
