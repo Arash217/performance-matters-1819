@@ -1,26 +1,32 @@
 const self = this;
 const cacheName = "V1";
 
-self.addEventListener('install', async e => {
-    console.log('WORKER: install event in progress.');
+const cacheResources = async () => {
+    const cache = await caches.open(cacheName);
+    return cache.addAll([
+        '/countries',
+    ]);
+};
 
-    e.waitUntil(async () => {
+self.addEventListener('install', e => {
+    e.waitUntil(cacheResources());
+});
+
+// self.addEventListener('activate', async e => {
+//     console.log('WORKER: activated event in progress.');
+// });
+
+const cachedResource = async req => {
+    if (req.method === 'GET'){
         const cache = await caches.open(cacheName);
-        await cache.addAll([
-            'countries',
-            '/js/all.min-9177f92d71e2d0620638a92e3fd6cea4.js'
-        ]);
-        self.skipWaiting();
-    })
-});
+        let res = await cache.match(req);
+        if (res) return res;
+        res = await fetch(req);
+        cache.put(req, res.clone());
+        return res;
+    }
+};
 
-self.addEventListener('activate', async e => {
-    console.log('WORKER: activated event in progress.');
-});
-
-self.addEventListener('fetch', async e => {
-    console.log('WORKER: fetch event in progress.');
-    //
-    // const response = caches.match(e.request.url) || fetch(e.request);
-    // e.respondWith(await response);
+self.addEventListener('fetch', e => {
+    e.respondWith(cachedResource(e.request))
 });
