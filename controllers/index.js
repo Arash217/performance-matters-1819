@@ -1,16 +1,16 @@
 const apiProxy = require('../services/api-proxy');
-const filter = require('../services/filter');
+const filterService = require('../services/filter');
 
 const countries = async ctx => {
     const {order = 'asc', search = ''} = ctx.query;
     let countries = await apiProxy.getAll();
 
     if (order) {
-        countries = filter.sort(countries, order);
+        countries = filterService.sort(countries, order);
     }
 
     if (search) {
-        countries = filter.search(countries, search);
+        countries = filterService.search(countries, search);
     }
 
     await ctx.render('countries', {
@@ -18,6 +18,25 @@ const countries = async ctx => {
         search,
         order,
         ascending: order === 'asc'
+    });
+};
+
+const filter = async ctx => {
+    const {body} = ctx.request;
+    const {order = 'asc', search = ''} = JSON.parse(body);
+
+    let countries = await apiProxy.getAll();
+
+    if (order) {
+        countries = filterService.sort(countries, order);
+    }
+
+    if (search) {
+        countries = filterService.search(countries, search);
+    }
+
+    await ctx.render('filter', {
+        countries
     });
 };
 
@@ -32,5 +51,6 @@ const country = async ctx => {
 
 module.exports = {
     countries,
-    country
+    country,
+    filter
 };

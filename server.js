@@ -6,6 +6,7 @@ const hbs = require('koa-hbs');
 const serve = require('koa-static');
 const koaManifestRev = require('koa-manifest-rev');
 const Koa = require('koa');
+const bodyParser = require('koa-body');
 
 const middlewares = require('./middlewares');
 const router = require('./routes');
@@ -13,6 +14,9 @@ const certificate = require('./config/certificate');
 
 /* Init Koa instance */
 const app = new Koa();
+
+/* Parse body */
+app.use(bodyParser());
 
 /* Serve assets from folder */
 app.use(serve(path.join(__dirname, '/public'), {
