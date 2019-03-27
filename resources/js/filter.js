@@ -1,9 +1,16 @@
 const searchInput = document.querySelector('#search-input');
+const searchInputButton = document.querySelector('#search-input-submit');
+
 const orderSelect = document.querySelector('#sort-select');
+const sortSelectButton = document.querySelector('#sort-select-submit');
+
 const countriesContainer = document.querySelector('#countries-container');
 
 let search = '';
 let order = 'asc';
+
+searchInputButton.style.display = 'none';
+sortSelectButton.style.display = 'none';
 
 const debounce = (fn, wait) => {
     let timeout;

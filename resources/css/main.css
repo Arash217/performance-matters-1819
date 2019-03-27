@@ -50,6 +50,7 @@ nav {
     background-color: var(--color3);
     border: 0;
     color: inherit;
+    margin-right: 0.5em;
 }
 
 #search-input::placeholder {
