@@ -17,9 +17,10 @@
     "revision:css": "node-file-rev public/css/main.min.css -m=public/rev-manifest.json -r=public/",
     "revision:js": "node-file-rev public/js/all.min.js -m=public/rev-manifest.json -r=public/",
     "revision": "run-p revision:css revision:js",
+    "precache": "sw-precache --config=./sw-precache-config.js",
     "build:css": "run-s minify:css revision:css compress:css",
     "build:js": "run-s minify:js revision:js compress:js",
-    "build": "npm-run-all prebuild -p build:css build:js",
+    "build": "npm-run-all prebuild -p build:css build:js -s precache",
     "start": "npm run build && node server.js"
   },
   "author": "",

@@ -1,12 +1,20 @@
 module.exports = {
+    dynamicUrlToDependencies: {
+      '/countries': 'views/countries.hbs'
+    },
     staticFileGlobs: [
-        'build/css/**.css',
-        'build/images/**.*',
-        'build/js/**.js'
+        'public/manifest.json',
+        'public/main.js',
+        'public/css/**.css',
+        'public/images/flags/**.svg',
+        'public/images/icons/**.*',
+        'public/js/**.js'
     ],
-    stripPrefix: 'build/',
+    stripPrefix: 'public/',
     runtimeCaching: [{
-        urlPattern: /countries\/(.+)/,
+        urlPattern: /countries\/.+/,
         handler: 'cacheFirst'
-    }]
+    }],
+    swFile: 'public/service-worker.js',
+    verbose: true
 };
