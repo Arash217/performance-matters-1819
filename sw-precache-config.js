@@ -7,7 +7,7 @@ module.exports = {
         'public/main.js',
         'public/css/**.css',
         'public/images/flags/**.svg',
-        'public/images/icons/**.*',
+        'public/images/icons/**.png',
         'public/js/**.js'
     ],
     stripPrefix: 'public/',
