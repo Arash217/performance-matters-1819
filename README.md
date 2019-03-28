@@ -59,18 +59,18 @@ npm start
 ### 3.1 First view
 
 #### 3.1.1 No optimizations
-Size
+Size:
 ```diff
 HTML size: 64.1 kb
 CSS size: 3.7 kb
-JQuery size: 276 kb
+JS total size: 276 kb
 SVG's total size: 4.6 mb
 ```
-Load time
+Load time:
 ```
 HTML time: 3.29 s
 CSS time: 2.27 s
-JQuery time: 11.01 s
+JS total time: 11.01 s
 SVG's total time: 1.9 min
 ```
 
