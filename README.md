@@ -184,8 +184,8 @@ Load time compared to minifying + Gzip compression with HTTP1:
 </details>
 
 ### 3.2 Repeat view
-For the repeat view, I'm caching the files and giving them a max-age of 31536000 seconds (a year). 
-Revisioned files are hashed in order for the browser to be hinted to use the new version.
+For the repeat view, I'm caching the files and giving them a max-age of 31536000 seconds (one year). 
+CSS and JavaScript files are hashed so that the browser can be hinted to use a new version.
 <details>
   <summary>Waterfall</summary>
   
