@@ -129,17 +129,17 @@ Load time compared to minifying only:
 #### 3.1.4 Minifying + Brotli compression
 Size difference compared to minifying + Gzip compression:
 ```diff
-+ HTML size: 5.5 KB 91%
-+ CSS size: 1.2 KB 54%
-+ JS total size: 29.0 KB 66%
-+ SVG's total size: 1.1 MB 62%
+HTML size: 5.5 KB
++ CSS size: 1 KB 17%
++ JS total size: 27.3 KB 6%
++ SVG's total size: 1 MB 9%
 ```
 Load time compared to minifying + Gzip compression:
 ```diff
-+ HTML time: 2.12 s 36%
-+ CSS time: 2.03 s 7%
-+ JS total time: 4.90 s 19%
-+ SVG's total time: 90 s 17%
++ HTML time: 2.11 s 
++ CSS time: 2.01 s 1%
++ JS total time: 4.50 s 8%
++ SVG's total time: 84 s 7%
 ```
 
 <details>
