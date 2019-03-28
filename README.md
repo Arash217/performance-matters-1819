@@ -72,10 +72,9 @@ CSS time: 2.27 s
 JQuery time: 11.01 s
 SVG's total time: 1.9 min
 ```
-<br>
+
 <details>
   <summary>Waterfall</summary>
-<br>
   
 ![No optimizations](../master/docs/optimizations-images/no-optimizations.png)
 </details>
