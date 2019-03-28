@@ -164,7 +164,7 @@ Size difference compared to minifying + Gzip compression with HTTP1:
 + CSS size: 0.8 KB 20%
 + JS total size: 27.1 KB 1%
 + SVG's total size: 0.97 MB 3%
-Total: 1 MB
+Total: ~1 MB
 ```
 Load time compared to minifying + Gzip compression with HTTP1:
 ```diff
