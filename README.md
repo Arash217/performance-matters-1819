@@ -29,7 +29,7 @@ The dev command will use nodemon to restart the server automatically when a chan
 npm run dev
 ```
 
-The prebuild command will remove the public folder and then recreate it to ensure that no files are cached
+The prebuild command will remove the public css and javascript folders and then recreate it to ensure that no files are cached
 ```bash
 npm run prebuild
 ```
@@ -39,17 +39,77 @@ The minify:css command will make a minified version of the CSS that is located i
 npm run minify:css
 ```
 
-The compress command will make a Gzip and Brotli version of all files that are located in the public folder
+The minify:svg command will minify the SVG's that are located in the public folder
+```bash
+npm run minify:svg
+```
+
+The minify:js command will minify and bundle the JavaScript files that are located in the resources folder and place it in the public folder
+```bash
+npm run minify:js
+```
+
+The minify command will run the minify:css and minify:js commands in parallel
+```bash
+npm run minify
+```
+
+The compress:css command will make Gzip and Brotli versions of all CSS files that are located in the public folder
+```bash
+npm run compress:css
+```
+
+The compress:svg command will make Gzip and Brotli versions of all the SVG's that are located in the public folder
+```bash
+npm run compress:svg
+```
+
+The compress:js command will make Gzip and Brotli versions of all the JavaScript files that are located in the public folder
+```bash
+npm run compress:js
+```
+
+The compress command will run the compress:css and compress:js commands in parallel
 ```bash
 npm run compress
 ```
 
-The build command will run the prebuild, minify and compress commands sequentially
+The revision:css command will add an hash to the filename of the CSS files in the public folder and then map the original filename and the hashed filename in rev-manifest.json
+```bash
+npm run revision:css
+```
+
+The revision:js command will add an hash to the filename of the JavaScript files in the public folder and then map the original filename and the hashed filename in rev-manifest.json
+```bash
+npm run revision:js
+```
+
+The revision command will run the revision:css and revision:js commands in parallel
+```bash
+npm run revision
+```
+
+The generate:sw command will generate a service worker by using the sw-precache-config.js options object that is located in the public folder
+```bash
+npm run generate:sw
+```
+
+The build:css command will run the minify:css, revision:css and compress:css commands sequentially
+```bash
+npm run build:css
+```
+
+The build:js command will run the minify:js, revision:js and compress:js commands sequentially
+```bash
+npm run build:js
+```
+
+The build command will first run the prebuild command, then the commands build:css and builds:js in parallel, and after these two are done the generate:sw command
 ```bash
 npm run build
 ```
 
-The start command will run the build command first and then start the server (on port 3000)
+The start command will run the build command first and then start the server
 ```bash
 npm start
 ```
