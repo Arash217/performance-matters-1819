@@ -86,7 +86,7 @@ Total: ~150 s
 ![No optimizations](../master/docs/optimizations-images/no-optimizations.png)
 </details>
 
-#### 3.1.2 Minifying
+#### 3.1.2 Minification
 Size difference compared to no optimizations:
 ```diff
 HTML size: 64.1 KB
@@ -110,8 +110,8 @@ HTML time: 3.30 s
 ![Minified](../master/docs/optimizations-images/minify.png)
 </details>
 
-#### 3.1.3 Minifying + Gzip compression
-Size difference compared to minifying only:
+#### 3.1.3 Minification + Gzip compression
+Size difference compared to minification:
 ```diff
 + HTML size: 5.5 KB 91%
 + CSS size: 1.2 KB 54%
@@ -119,7 +119,7 @@ Size difference compared to minifying only:
 + SVG's total size: 1.1 MB 62%
 + Total: ~1.1 MB 15%
 ```
-Load time compared to minifying only:
+Load time compared to minification:
 ```diff
 + HTML time: 2.12 s 36%
 + CSS time: 2.03 s 7%
@@ -134,8 +134,8 @@ Load time compared to minifying only:
 ![Gzip-compressed](../master/docs/optimizations-images/gzip.png)
 </details>
 
-#### 3.1.4 Minifying + Brotli compression
-Size difference compared to minifying + Gzip compression:
+#### 3.1.4 Minification + Brotli compression
+Size difference compared to minification + Gzip compression:
 ```diff
 HTML size: 5.5 KB
 + CSS size: 1 KB 17%
@@ -143,7 +143,7 @@ HTML size: 5.5 KB
 + SVG's total size: 1 MB 9%
 + Total: ~1 MB 9%
 ```
-Load time compared to minifying + Gzip compression:
+Load time compared to minification + Gzip compression:
 ```diff
 + HTML time: 2.11 s 
 + CSS time: 2.01 s 1%
@@ -159,8 +159,8 @@ Load time compared to minifying + Gzip compression:
 </details>
 
 
-#### 3.1.5 Minifying + Brotli compression + HTTP2
-Size difference compared to minifying + Gzip compression with HTTP1:
+#### 3.1.5 Minification + Brotli compression + HTTP2
+Size difference compared to minification + Gzip compression in HTTP1:
 ```diff
 + HTML size: 5.4 KB 2%
 + CSS size: 0.8 KB 20%
@@ -168,7 +168,7 @@ Size difference compared to minifying + Gzip compression with HTTP1:
 + SVG's total size: 0.97 MB 3%
 Total: ~1 MB
 ```
-Load time compared to minifying + Gzip compression with HTTP1:
+Load time compared to minification + Gzip compression in HTTP1:
 ```diff
 - HTML time: 2.12 s -0.5%
 - CSS time: 2.03 s -1%
@@ -212,10 +212,9 @@ The SVG's total file size went from 4.6 MB to 1 MB (78% reduction) in HTTP1 and 
 The loading time went from 132 s to 84 s (36% reduction) in HTTP1 and 26.90 s (80% reduction) in HTTP2.
 
 #### HTTP1
-The optimizations with HTTP1 are as expected; The minifying and compression reduced the file sizes and load times.
+The optimizations in HTTP1 are as expected; The minification and compression reduced the file sizes and load times.
 
 #### HTTP2
 The optimizations get interesting with HTTP2. 
 Compared to HTTP1 - which had a total load time of 101 seconds - HTTP2 needed only 27 seconds to do this. 
-This is because HTTP2 supports multiplexing which allows the browser to make multiple requests at the same time, while HTTP1 allows max 6 requests at the same time. As you can see in the waterfall of HTTP1, the majority of the svg files are blocked because of this limitation. However, HTTP2 allowing multiple requests at the same time does have a negative impact. As you can see the JS file load time took 22.56 seconds to load with HTTP2, compared to the 4.50 seconds with HTTP1. This is because the requests are 'fighting' for bandwidth. Another interesting thing are the different files sizes between HTTP1 and HTTP2. The file sizes are a bit smaller in HTTP2. This is because of the new header compression in HTTP2.
-
+This is because HTTP2 supports multiplexing which allows the browser to make multiple requests at the same time, while HTTP1 allows max 6 requests at the same time. As you can see, in the waterfall of HTTP1, the majority of the svg files are blocked because of this limitation. However, allowing multiple requests at the same time can have a negative impact. As you can see, the JS file load time took 22.56 seconds to load with HTTP2, compared to the 4.50 seconds with HTTP1. This is because the requests are 'fighting' for bandwidth. Another interesting thing are the different files sizes between HTTP1 and HTTP2. The file sizes are a bit smaller in HTTP2 because of the new header compression in HTTP2.
