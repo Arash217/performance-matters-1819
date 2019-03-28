@@ -299,3 +299,6 @@ The job stories:
 - When I'm offline, I want to use the app, so that I can see the countries overview.
 - When I'm offline, I want to use the app, so that I can see the country details.
 - When I'm offline, I want to be notified, so that I can know wether the app is in online or offline modus.
+
+## Sources
+- [HTTP2](https://http2.github.io/faq/#why-is-http2-binary)
