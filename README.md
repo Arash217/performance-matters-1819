@@ -57,6 +57,7 @@ npm start
 ## 3. Optimizations
 
 The next sections display the results of the optimizations.
+
 Note: Load times are based on 'slow 3G' emulation of Google developer tools.
 
 ### 3.1 First view
