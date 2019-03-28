@@ -83,12 +83,12 @@ SVG's total time: 2.2 min
 </details>
 
 #### 3.1.2 Minifying
-Size:
+Size difference compared to no optimizations:
 ```diff
 HTML size: 64.1 KB
-CSS size: 2.6 KB
-JS total size: 85.6 kb
-SVG's total size: 2.9 mb
++ CSS size: 2.6 KB 32%
++ JS total size: 85.6 kb 68%
+SVG's total size: 2.9 mb 37%
 ```
 Load time:
 ```
