@@ -170,8 +170,8 @@ Total: ~1 MB
 ```
 Load time compared to minification + Gzip compression in HTTP1:
 ```diff
-- HTML time: 2.12 s -0.5%
-- CSS time: 2.03 s -1%
+- HTML time: 2.12 s +0.5%
+- CSS time: 2.03 s +1%
 - JS total time: 22.56 s +401%
 + SVG's total time: 26.90 s 68%
 + Total: ~27 s 73%
