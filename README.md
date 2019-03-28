@@ -191,3 +191,6 @@ Revisioned files are hashed in order for the browser to be hinted to use the new
   
 ![Repeat-view](../master/docs/optimizations-images/repeat-view.png)
 </details>
+
+### 3.3 Conclusion
+//TODO: Begin and end of optimizations + http2 weird compression en fast loading times + lighthouse start and end
