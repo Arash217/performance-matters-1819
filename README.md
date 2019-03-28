@@ -1,7 +1,7 @@
 # COUNTRIES OVERVIEW
 
 ## Summary
-Server-side application of the [SPA](https://github.com/Arash217/web-app-from-scratch-18-19) that I previously made to show an overview of all countries.
+Server-side application of the [SPA](https://github.com/Arash217/web-app-from-scratch-18-19) that I previously made to show an overview of all countries. I chose to optimize the first view and repeat view, because I wanted to do more experience optimizing pages for performance.
 
 ![Overview](../master/docs/app.png)
 
@@ -56,9 +56,7 @@ npm start
 
 ## 3. Optimizations
 
-I chose to optimize the first view and repeat view, because I wanted to have more experience optimizing pages for performance.
-In the next sections you can find the results of the optimizations.
-
+The next sections display the results of the optimizations.
 Note: Load times are based on 'slow 3G' emulation of Google developer tools.
 
 ### 3.1 First view
