@@ -226,7 +226,9 @@ SPA:
 <br>
 ![Lighthouse-start](../master/docs/optimizations-images/lighthouse-start.jpg)
 
-<img align="center" src="https://github.com/Arash217/performance-matters-1819/blob/master/docs/optimizations-images/lighthouse-start.jpg">
+<p align="center">
+  <img src="https://github.com/Arash217/performance-matters-1819/blob/master/docs/optimizations-images/lighthouse-start.jpg">
+</p>
 
 Server side:
 <br>
