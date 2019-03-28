@@ -56,22 +56,24 @@ npm start
 
 ## 3. Optimizations
 
+Load times are based on 'slow 3G' emulation of Google developer tools.
+
 ### 3.1 First view
 
 #### 3.1.1 No optimizations
 Size:
 ```diff
-HTML size: 64.1 kb
-CSS size: 3.7 kb
-JS total size: 276 kb
-SVG's total size: 4.6 mb
+HTML size: 64.1 KB
+CSS size: 3.8 kB
+JS total size: 267.5 KB
+SVG's total size: 4.6 MB
 ```
 Load time:
 ```
 HTML time: 3.29 s
-CSS time: 2.27 s
-JS total time: 11.01 s
-SVG's total time: 1.9 min
+CSS time: 2.23 s
+JS total time: 11.9 s
+SVG's total time: 2.2 min
 ```
 
 <details>
