@@ -82,6 +82,7 @@ SVG's total time: 1.9 min
 <details>
   <summary>Waterfall</summary>
 <br>
+  
 ![No optimizations](../master/docs/optimizations-images/no-optimizations.png)
 </details>
 
