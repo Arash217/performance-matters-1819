@@ -170,9 +170,9 @@ Total: ~1 MB
 ```
 Load time compared to minification + Gzip compression in HTTP1:
 ```diff
-- HTML time: 2.12 s -0.5%
-- CSS time: 2.03 s -1%
-- JS total time: 22.56 s -401%
+- HTML time: 2.12 s 0.5%
+- CSS time: 2.03 s 1%
+- JS total time: 22.56 s 401%
 + SVG's total time: 26.90 s 68%
 + Total: ~27 s 73%
 ```
@@ -218,3 +218,9 @@ The optimizations in HTTP1 are as expected; The minification and compression red
 The optimizations get interesting with HTTP2. 
 Compared to HTTP1 - which had a total load time of 101 seconds - HTTP2 needed only 27 seconds to do this. 
 This is because HTTP2 supports multiplexing which allows the browser to make multiple requests at the same time, while HTTP1 allows max 6 requests at the same time. As you can see, in the waterfall of HTTP1, the majority of the svg files are blocked because of this limitation. However, allowing multiple requests at the same time can have a negative impact. As you can see, the JS file load time took 22.56 seconds to load with HTTP2, compared to the 4.50 seconds with HTTP1. This is because the requests are 'fighting' for bandwidth. Another interesting thing are the different files sizes between HTTP1 and HTTP2. The file sizes are a bit smaller in HTTP2. I suspect that it's because of the new header compression in HTTP2 and/or because of HTTP2 being binary.
+
+## 4. PWA & Service Worker
+The job stories:
+- When I'm offline, I want to use the app, so that I can see the countries overview.
+- When I'm offline, I want to use the app, so that I can see the country details.
+- When I'm offline, I want to be notified, so that I can know wether the app is in online or offline modus.
