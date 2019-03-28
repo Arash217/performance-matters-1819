@@ -79,6 +79,12 @@ SVG's total time: 1.9 min
 ```
 </details>
 
+<details>
+  <summary>Waterfall</summary>
+<br>
+![Overview](../master/docs/optimizations-images/no-optimization.png)
+</details>
+
 #### 3.1.2 Minifying
 ```diff
 HTML size: 64.1 kb
