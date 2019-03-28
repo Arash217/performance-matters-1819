@@ -67,6 +67,7 @@ HTML size: 64.1 KB
 CSS size: 3.8 kB
 JS total size: 267.5 KB
 SVG's total size: 4.6 MB
+Total: ~ 4.9 MB
 ```
 Load time:
 ```diff
@@ -74,6 +75,7 @@ HTML time: 3.29 s
 CSS time: 2.23 s
 JS total time: 11.9 s
 SVG's total time: 132 s
+Total: ~150 s
 ```
 
 <details>
@@ -89,6 +91,7 @@ HTML size: 64.1 KB
 + CSS size: 2.6 KB 32%
 + JS total size: 85.6 KB 68%
 + SVG's total size: 2.9 MB 37%
++ Total: ~3.1 MB 37%
 ```
 Load time compared to no optimizations:
 ```diff
@@ -96,6 +99,7 @@ HTML time: 3.30 s
 + CSS time: 2.19 s 1.8%
 + JS total time: 6.03 s 49%
 + SVG's total time: 108 s 18%
++ Total: ~120 s 20%
 ```
 
 <details>
@@ -111,6 +115,7 @@ Size difference compared to minifying only:
 + CSS size: 1.2 KB 54%
 + JS total size: 29.0 KB 66%
 + SVG's total size: 1.1 MB 62%
++ Total: ~1.1 MB 15%
 ```
 Load time compared to minifying only:
 ```diff
@@ -118,6 +123,7 @@ Load time compared to minifying only:
 + CSS time: 2.03 s 7%
 + JS total time: 4.90 s 19%
 + SVG's total time: 90 s 17%
++ Total: ~108 s 10%
 ```
 
 <details>
