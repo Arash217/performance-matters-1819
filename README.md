@@ -220,11 +220,14 @@ Compared to HTTP1 - which had a total load time of 101 seconds - HTTP2 needed on
 This is because HTTP2 supports multiplexing which allows the browser to make multiple requests at the same time, while HTTP1 allows max 6 requests at the same time. As you can see, in the waterfall of HTTP1, the majority of the svg files are blocked because of this limitation. However, allowing multiple requests at the same time can have a negative impact. As you can see, the JS file load time took 22.56 seconds to load with HTTP2, compared to the 4.50 seconds with HTTP1. This is because the requests are 'fighting' for bandwidth. Another interesting thing are the different files sizes between HTTP1 and HTTP2. The file sizes are a bit smaller in HTTP2. I suspect that it's because of the new header compression in HTTP2 and/or because of HTTP2 being binary.
 
 ## 4. Audit results
-I used lighthouse - an audit tool in Chrome's devtools - to audit the SPA and this server side version of the SPA. 
+I used lighthouse - an audit tool in Chrome's devtools - to audit the SPA and this server side version of the SPA.
+
 SPA:
+<br>
 ![Lighthouse-start](../master/docs/optimizations-images/lighthouse-start.jpg)
 
 Server side:
+<br>
 ![Lighthouse-end](../master/docs/optimizations-images/lighthouse-end.jpg)
 
 ## 5. PWA & Service Worker
