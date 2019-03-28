@@ -65,18 +65,14 @@ CSS size: 3.7 kb
 JQuery size: 276 kb
 SVG's total size: 4.6 mb
 ```
-<details>
-  <summary>Network results based on a slow 3G network</summary>
 <br>
-
 ```
 HTML time: 3.29 s
 CSS time: 2.27 s
 JQuery time: 11.01 s
 SVG's total time: 1.9 min
 ```
-</details>
-
+<br>
 <details>
   <summary>Waterfall</summary>
 <br>
