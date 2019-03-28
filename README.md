@@ -73,7 +73,7 @@ Load time:
 HTML time: 3.29 s
 CSS time: 2.23 s
 JS total time: 11.9 s
-SVG's total time: 2.2 min
+SVG's total time: 132 s
 ```
 
 <details>
@@ -88,14 +88,14 @@ Size difference compared to no optimizations:
 HTML size: 64.1 KB
 + CSS size: 2.6 KB 32%
 + JS total size: 85.6 kb 68%
-SVG's total size: 2.9 mb 37%
++ SVG's total size: 2.9 mb 37%
 ```
-Load time:
+Load time compared to no optimizations:
 ```
 HTML time: 3.30 s
-CSS time: 2.19 s
-JS total time: 6.03 s
-SVG's total time: 1.8 min
++ CSS time: 2.19 s 1.8%
++ JS total time: 6.03 s 49%
++ SVG's total time: 108 s 18%
 ```
 
 <details>
