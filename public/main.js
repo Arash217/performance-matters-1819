@@ -15,6 +15,8 @@ if ('serviceWorker' in navigator) {
             }
         }
 
+        handleNetworkChange();
+
         window.addEventListener('online', handleNetworkChange);
         window.addEventListener('offline', handleNetworkChange);
     })
