@@ -83,22 +83,23 @@ SVG's total time: 2.2 min
 </details>
 
 #### 3.1.2 Minifying
+Size:
 ```diff
-HTML size: 64.1 kb
-CSS size: 2.6 kb
-JQuery size: 84.6 kb
+HTML size: 64.1 KB
+CSS size: 2.6 KB
+JS total size: 85.6 kb
 SVG's total size: 2.9 mb
 ```
-<details>
-  <summary>Network results based on a slow 3G network</summary>
-<br>
-
+Load time:
 ```
 HTML time: 3.30 s
-CSS time: 2.16 s
-JQuery time: 5.59 s
-SVG's total time: 1.5 min
-
-256 requests | 2.9 MB transferred | Finish 1.9 min | DOMContentLoaded: 10.13 s | Load 1.9 min
+CSS time: 2.19 s
+JS total time: 6.03 s
+SVG's total time: 1.8 min
 ```
+
+<details>
+  <summary>Waterfall</summary>
+  
+![Minified](../master/docs/optimizations-images/minify.png)
 </details>
