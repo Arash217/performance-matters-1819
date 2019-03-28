@@ -104,7 +104,7 @@ HTML time: 3.30 s
 ![Minified](../master/docs/optimizations-images/minify.png)
 </details>
 
-#### 3.1.3 Minifying and Gzip compression
+#### 3.1.3 Minifying + Gzip compression
 Size difference compared to minifying only:
 ```diff
 + HTML size: 5.5 KB 91%
