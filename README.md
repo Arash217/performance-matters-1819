@@ -147,3 +147,26 @@ Load time compared to minifying + Gzip compression:
   
 ![Minified](../master/docs/optimizations-images/brotli.png)
 </details>
+
+
+#### 3.1.5 Minifying + Brotli compression + HTTP2
+Size difference compared to minifying + Gzip compression with HTTP1:
+```diff
++ HTML size: 5.4 KB 2%
++ CSS size: 0.8 KB 20%
++ JS total size: 27.1 KB 1%
++ SVG's total size: 0.97 MB 3%
+```
+Load time compared to minifying + Gzip compression with HTTP1:
+```diff
+- HTML time: 2.12 s -0.5%
+- CSS time: 2.03 s -1%
+- JS total time: 22.56 s -401%
++ SVG's total time: 26.90 s 68%
+```
+
+<details>
+  <summary>Waterfall</summary>
+  
+![Minified](../master/docs/optimizations-images/http2.png)
+</details>
