@@ -3,3 +3,4 @@ node_modules
 public/css
 public/js
 public/rev-manifest.json
+public/service-worker.js
