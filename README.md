@@ -193,4 +193,22 @@ CSS and JavaScript files are hashed so that the browser can be hinted to use a n
 </details>
 
 ### 3.3 Conclusion
-//TODO: Begin and end of optimizations + http2 weird compression en fast loading times + lighthouse start and end
+The results speak for themselves!
+
+The HTML file size went from 64.1 KB to 5.5 KB (91% reduction) in HTTP1 and 5.4 KB (92% reduction) in HTTP2. 
+The loading time went from 3.29 s to 2.11 s (36.9% reduction) in HTTP1 and 2.12 s (36.6% reduction) in HTTP2.
+
+The CSS file size went from 3.8 KB to 1 KB (74% reduction) in HTTP1 and 0.8 KB (79% reduction) in HTTP2. 
+The loading time went from 2.23 s to 2.01 s (9.9% reduction) in HTTP1 and 2.03 s (9% reduction) in HTTP2.
+
+The JS total file size went from 267.5 KB to 27.3 KB (89.8% reduction) in HTTP1 and 27.1 KB (89.9% reduction) in HTTP2. 
+The loading time went from 11.9 s to 4.50 s (62% reduction) in HTTP1 and 22.56 s (90% increase) in HTTP2.
+
+The SVG's total file size went from 4.6 MB to 1 MB (78% reduction) in HTTP1 and 0.97 MB (79% reduction) in HTTP2. 
+The loading time went from 132 s to 84 s (36% reduction) in HTTP1 and 26.90 s (80% reduction) in HTTP2.
+
+The optimizations with HTTP1 are as expected; The minifying and compression reduced the file sizes and load times.
+The optimizations get interesting with HTTP2. 
+Compared to HTTP1 - which had a total load time of 101 seconds - HTTP2 needed only 27 seconds to do this. 
+This is because HTTP2 supports multiplexing which allows the browser to make multiple requests at the same time, while HTTP1 allows max 6 requests at the same time. As you can see in the waterfall of the HTTP1, the majority of the svg files are blocked because of this limitation. However, HTTP2 allowing multiple requests at the same time does have a negative impact. As you can see the JS file load time took 22.56 seconds to load with HTTP2, compared to the 4.50 seconds with HTTP1. This is because the requests are 'fighting' for bandwidth. Another interesting thing to note are the different files sizes between HTTP1 and HTTP2. For some reason the file sizes are a bit smaller with HTTP2. I didn't had time to look into it but I suspect that it has to do with the new header compression in HTTP2.
+
