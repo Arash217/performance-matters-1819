@@ -223,6 +223,7 @@ This is because HTTP2 supports multiplexing which allows the browser to make mul
 I used lighthouse - an audit tool in Chrome's devtools - to audit the SPA and this server side version of the SPA. 
 SPA:
 ![Lighthouse-start](../master/docs/optimizations-images/lighthouse-start.jpg)
+
 Server side:
 ![Lighthouse-end](../master/docs/optimizations-images/lighthouse-end.jpg)
 
