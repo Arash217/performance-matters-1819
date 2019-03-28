@@ -225,7 +225,9 @@ I used lighthouse - an audit tool in Chrome's devtools - to audit the SPA and th
 SPA:
 <br>
 ![Lighthouse-start](../master/docs/optimizations-images/lighthouse-start.jpg)
-<img align="center" src="https://github.com/Arash217/performance-matters-1819/blob/master/docs/optimizations-images/lighthouse-start.jpg"/>
+
+<img align="center" src="https://github.com/Arash217/performance-matters-1819/blob/master/docs/optimizations-images/lighthouse-start.jpg">
+
 Server side:
 <br>
 ![Lighthouse-end](../master/docs/optimizations-images/lighthouse-end.jpg)
