@@ -74,8 +74,6 @@ HTML time: 3.29 s
 CSS time: 2.27 s
 JQuery time: 11.01 s
 SVG's total time: 1.9 min
-
-256 requests | 4.9 MB transferred | Finish 2.3 min | DOMContentLoaded: 14.81 s | Load 2.3 min
 ```
 </details>
 
