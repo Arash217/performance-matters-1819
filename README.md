@@ -87,8 +87,8 @@ Size difference compared to no optimizations:
 ```diff
 HTML size: 64.1 KB
 + CSS size: 2.6 KB 32%
-+ JS total size: 85.6 kb 68%
-+ SVG's total size: 2.9 mb 37%
++ JS total size: 85.6 KB 68%
++ SVG's total size: 2.9 MB 37%
 ```
 Load time compared to no optimizations:
 ```diff
@@ -102,4 +102,26 @@ HTML time: 3.30 s
   <summary>Waterfall</summary>
   
 ![Minified](../master/docs/optimizations-images/minify.png)
+</details>
+
+#### 3.1.3 Minifying and Gzip compression
+Size difference compared to minifying only:
+```diff
++ HTML size: 5.5 KB 91%
++ CSS size: 1.2 KB 54%
++ JS total size: 29.0 KB 66%
++ SVG's total size: 1.1 MB 62%
+```
+Load time compared to minifying only:
+```diff
++ HTML time: 2.12 s 36%
++ CSS time: 2.03 s 7%
++ JS total time: 4.90 s 19%
++ SVG's total time: 90 s 17%
+```
+
+<details>
+  <summary>Waterfall</summary>
+  
+![Minified](../master/docs/optimizations-images/gzip.png)
 </details>
