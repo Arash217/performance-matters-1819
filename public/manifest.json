@@ -3,7 +3,8 @@
   "short_name": "PWA",
   "start_url": "/",
   "display": "fullscreen",
-  "theme_color": "#2A3443",
+  "theme_color": "#254b62",
+  "background_color": "#1d3e53",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
