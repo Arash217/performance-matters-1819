@@ -4,17 +4,13 @@ const cacheName = "V1";
 const cacheResources = async () => {
     const cache = await caches.open(cacheName);
     return cache.addAll([
-        '/countries',
+        '/countries'
     ]);
 };
 
 self.addEventListener('install', e => {
     e.waitUntil(cacheResources());
 });
-
-// self.addEventListener('activate', async e => {
-//     console.log('WORKER: activated event in progress.');
-// });
 
 const cachedResource = async req => {
     if (req.method === 'GET'){
